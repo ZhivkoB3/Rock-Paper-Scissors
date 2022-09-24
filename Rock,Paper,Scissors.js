@@ -1,23 +1,23 @@
 let aDiv = document.createElement('div');
 aDiv.classList.add('results');
-aDiv.setAttribute('id', 'results')
+aDiv.setAttribute('id', 'results');
 aDiv.style.display = 'flex';
 aDiv.style.width = "100%";
 aDiv.style.height = "300px";
 
 let resultHeader = document.createElement('h1');
-resultHeader.setAttribute('id', 'result-header')
+resultHeader.setAttribute('id', 'result-header');
 resultHeader.textContent = ('Results');
 resultHeader.style.width = '50%';
-resultHeader.style.textAlign = "center"
+resultHeader.style.textAlign = "center";
 
-aDiv.appendChild(resultHeader)
+aDiv.appendChild(resultHeader);
 
 const choiceHeader = document.createElement('h1');
-choiceHeader.setAttribute('id', 'choice-header')
+choiceHeader.setAttribute('id', 'choice-header');
 choiceHeader.textContent = ("Choices");
 choiceHeader.style.width = '50%';
-choiceHeader.style.textAlign = "center"
+choiceHeader.style.textAlign = "center";
 
 aDiv.appendChild(choiceHeader);
 document.body.appendChild(aDiv);
@@ -30,7 +30,7 @@ function resultTracker(computer, player)
     let textResultContent = document.createElement('p');
 
     if(computer === player){
-        textResultContent.textContent = "Tie"
+        textResultContent.textContent = "Tie";
     }
     else if(player === 'rock'){
         if (computer === 'paper'){
@@ -39,7 +39,7 @@ function resultTracker(computer, player)
         }
         else{
             playerScore++;
-            textResultContent.textContent = ("Player won: " + playerScore.toString())
+            textResultContent.textContent = ("Player won: " + playerScore.toString());
         }
     }
     else if(player === 'scissors'){
@@ -49,7 +49,7 @@ function resultTracker(computer, player)
         }
         else{
             playerScore++;
-            textResultContent.textContent = ("Player won: " + playerScore.toString())
+            textResultContent.textContent = ("Player won: " + playerScore.toString());
         }
     }
     else if(player === 'paper'){
@@ -59,7 +59,7 @@ function resultTracker(computer, player)
         }
         else {
             playerScore++;
-            textResultContent.textContent = ("Player won: " + playerScore.toString())
+            textResultContent.textContent = ("Player won: " + playerScore.toString());
         }
     }
     resultHeader.appendChild(textResultContent);
@@ -67,34 +67,34 @@ function resultTracker(computer, player)
 
 function getComputerChoice()
 {
-    let textComputerChoice = document.createElement('p')
+    let textComputerChoice = document.createElement('p');
     let currVal;
 
-    let values = ["Rock", "Paper", "Scissors"]
-    let computerChoice = Math.floor(Math.random() * values.length)
+    let values = ["Rock", "Paper", "Scissors"];
+    let computerChoice = Math.floor(Math.random() * values.length);
 
     if (computerChoice === 1)
-        {currVal = 'rock'
+        {currVal = 'rock';
         textComputerChoice.textContent = "Computer choice: Rock";}
     else if (computerChoice === 2)
-        {currVal = 'paper'
+        {currVal = 'paper';
         textComputerChoice.textContent = "Computer choice: Paper";}
     else
-        {currVal = 'scissors'
+        {currVal = 'scissors';
         textComputerChoice.textContent = "Computer choice: Scissors";}
-    choiceHeader.appendChild(textComputerChoice)
-    return currVal
+    choiceHeader.appendChild(textComputerChoice);
+    return currVal;
 }
 
 function getPlayerChoice(playerChoice) {
-    let textPlayerChoice = document.createElement('p')
+    let textPlayerChoice = document.createElement('p');
     if (playerChoice === 'rock')
         textPlayerChoice.textContent = "Player choice: Rock";
     else if (playerChoice === 'paper')
         textPlayerChoice.textContent = "Player choice: Paper";
     else
         textPlayerChoice.textContent = "Player choice: Scissors";
-    choiceHeader.appendChild(textPlayerChoice)
+    choiceHeader.appendChild(textPlayerChoice);
     return playerChoice;
 }
 
@@ -105,7 +105,6 @@ function reloadGame() {
     btn.style.position = 'absolute';
     btn.style.margin = '50px 45%';
     btn.style.padding = '15px 64px';
-    // btn.
 
     btn.addEventListener('click', () => {
         window.location.reload();
@@ -140,9 +139,9 @@ myButtons.forEach(key => key.addEventListener(
     'click', function(){
 
         let playerChoice = getPlayerChoice(key.id);
-        let computerChoice = getComputerChoice()
+        let computerChoice = getComputerChoice();
 
-        resultTracker(computerChoice, playerChoice)
+        resultTracker(computerChoice, playerChoice);
         GameOver();
     }));
 
