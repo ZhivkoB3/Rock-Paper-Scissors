@@ -1,0 +1,16 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.player-selection {
+    margin: 30px;
+}
+
+.player-selection img {
+    display: flex;
+    flex: 1;
+    width: 200px;
+    height: 200px;
+}
